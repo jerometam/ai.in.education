@@ -146,8 +146,8 @@ header .container {
   height: 64px;
 }
 .logo {
-  display: flex; align-items: center; gap: 8px;
-  font-weight: 800; font-size: 18px; color: var(--text);
+  display: flex; align-items: center; gap: 10px;
+  color: var(--text); text-decoration: none;
 }
 .logo-icon {
   width: 32px; height: 32px;
@@ -155,13 +155,19 @@ header .container {
   border-radius: 8px;
   display: flex; align-items: center; justify-content: center;
   font-size: 15px; font-weight: 800;
-  cursor: pointer;
-  user-select: none;
+  flex-shrink: 0;
+}
+.logo-text {
+  display: flex; flex-direction: column;
+  line-height: 1.2;
+}
+.logo-main {
+  font-weight: 800; font-size: 16px;
+  color: var(--text);
 }
 .logo-sub {
-  font-size: 11px; font-weight: 400;
+  font-size: 10px; font-weight: 400;
   color: var(--text-muted);
-  white-space: nowrap;
 }
 
 nav { display: flex; align-items: center; gap: 20px; }
@@ -178,6 +184,35 @@ nav a:hover, nav a.active { color: var(--primary); font-weight: 600; }
   color: var(--text-muted); font-family: inherit; transition: all 0.2s;
 }
 .lang-switch button.active { background: var(--primary-light); color: var(--primary); }
+
+/* ===== Hamburger Menu Button ===== */
+.menu-toggle {
+  display: none;
+  flex-direction: column; gap: 4px;
+  background: none; border: none;
+  cursor: pointer; padding: 6px;
+  z-index: 210;
+}
+.menu-toggle span {
+  display: block;
+  width: 22px; height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+/* ===== Nav Close Button ===== */
+.nav-close {
+  display: none;
+  position: absolute;
+  top: 16px; right: 16px;
+  background: none; border: none;
+  font-size: 24px;
+  color: var(--hero-text);
+  cursor: pointer;
+  z-index: 210;
+  padding: 8px;
+}
 
 /* ===== Buttons ===== */
 .btn {
@@ -319,7 +354,10 @@ footer a:hover { color: var(--primary); }
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
-  /* Mobile nav: hidden by default, shown via .nav-open */
+  /* Hamburger: show on mobile */
+  .menu-toggle { display: flex; }
+
+  /* Desktop nav: hide, overlay nav: shown via .nav-open */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -335,6 +373,9 @@ footer a:hover { color: var(--primary); }
   header.nav-open nav {
     display: flex;
     opacity: 1;
+  }
+  header.nav-open .nav-close {
+    display: block;
   }
   nav a {
     font-size: 20px;
@@ -361,14 +402,8 @@ footer a:hover { color: var(--primary); }
     background: rgba(255,255,255,0.1);
   }
 
-  header.nav-open .logo-icon {
-    z-index: 300;
-    position: relative;
-  }
-
   .card-grid { grid-template-columns: 1fr; }
   .newsletter { padding: 28px 20px; }
   .newsletter-form { flex-direction: column; }
   .hero p { max-width: 100%; }
-  .logo-sub { font-size: 10px; }
 }

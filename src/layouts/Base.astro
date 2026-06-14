@@ -18,11 +18,20 @@ import '../styles/global.css';
 <body>
   <header>
     <div class="container">
-      <a href="/" class="logo" id="logoLink">
-        <div class="logo-icon" id="mobileMenuBtn">ai</div>
-        <span>ai.in.education <span class="logo-sub">· 香港 x AI x 教育</span></span>
+      <a href="/" class="logo">
+        <div class="logo-icon">ai</div>
+        <div class="logo-text">
+          <div class="logo-main">ai.in.education</div>
+          <div class="logo-sub">· 香港 x AI x 教育</div>
+        </div>
       </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="選單">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <nav id="mainNav">
+        <button class="nav-close" id="navClose">✕</button>
         <a href="/" class="active">首頁</a>
         <a href="/tools">AI 工具</a>
         <a href="/ideas">教學點子</a>
@@ -83,14 +92,16 @@ import '../styles/global.css';
     }
 
     // Mobile menu toggle
-    const menuBtn = document.getElementById('mobileMenuBtn');
+    const menuToggle = document.getElementById('menuToggle');
+    const navClose = document.getElementById('navClose');
     const mainNav = document.getElementById('mainNav');
     const header = document.querySelector('header');
     
-    menuBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      header.classList.toggle('nav-open');
+    menuToggle.addEventListener('click', function() {
+      header.classList.add('nav-open');
+    });
+    navClose.addEventListener('click', function() {
+      header.classList.remove('nav-open');
     });
 
     // Close nav when clicking a link
