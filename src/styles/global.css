@@ -214,6 +214,26 @@ nav a:hover, nav a.active { color: var(--primary); font-weight: 600; }
   padding: 8px;
 }
 
+/* ===== Nav Theme Toggle (inside mobile overlay) ===== */
+.nav-theme-toggle {
+  display: none;
+  align-items: center; gap: 8px;
+  margin: 24px auto 0;
+  padding: 10px 20px;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  cursor: pointer;
+  font-size: 14px; font-weight: 500;
+  color: var(--hero-text-secondary);
+  font-family: inherit;
+  transition: all 0.2s;
+}
+.nav-theme-toggle:hover {
+  background: rgba(255,255,255,0.18);
+  color: var(--hero-text);
+}
+
 /* ===== Buttons ===== */
 .btn {
   display: inline-flex; align-items: center; gap: 6px;
@@ -356,6 +376,7 @@ footer a:hover { color: var(--primary); }
 @media (max-width: 768px) {
   /* Hamburger: show on mobile */
   .menu-toggle { display: flex; }
+  .theme-toggle { display: none; }
 
   /* Desktop nav: hide, overlay nav: shown via .nav-open */
   nav {
@@ -376,6 +397,9 @@ footer a:hover { color: var(--primary); }
   }
   header.nav-open .nav-close {
     display: block;
+  }
+  .nav-theme-toggle {
+    display: flex;
   }
   nav a {
     font-size: 20px;
