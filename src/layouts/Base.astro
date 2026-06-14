@@ -18,11 +18,11 @@ import '../styles/global.css';
 <body>
   <header>
     <div class="container">
-      <a href="/" class="logo">
-        <div class="logo-icon">ai</div>
-        <span>ai.in.education <span class="logo-sub">· 香港教育 AI</span></span>
+      <a href="/" class="logo" id="logoLink">
+        <div class="logo-icon" id="mobileMenuBtn">ai</div>
+        <span>ai.in.education <span class="logo-sub">· 香港 x AI x 教育</span></span>
       </a>
-      <nav>
+      <nav id="mainNav">
         <a href="/" class="active">首頁</a>
         <a href="/tools">AI 工具</a>
         <a href="/ideas">教學點子</a>
@@ -56,6 +56,7 @@ import '../styles/global.css';
   </button>
 
   <script>
+    // Theme toggle
     const btn = document.getElementById('themeBtn');
     const icon = document.getElementById('themeIcon');
     const label = document.getElementById('themeLabel');
@@ -80,6 +81,31 @@ import '../styles/global.css';
       document.documentElement.setAttribute('data-theme', 'dark');
       icon.textContent = '☀️'; label.textContent = 'Light';
     }
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.getElementById('mainNav');
+    const header = document.querySelector('header');
+    
+    menuBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      header.classList.toggle('nav-open');
+    });
+
+    // Close nav when clicking a link
+    mainNav.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        header.classList.remove('nav-open');
+      });
+    });
+
+    // Close nav when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!header.contains(e.target) && header.classList.contains('nav-open')) {
+        header.classList.remove('nav-open');
+      }
+    });
   </script>
 </body>
 </html>
