@@ -1,0 +1,89 @@
+---
+// src/pages/index.astro
+// Homepage
+import Base from '../layouts/Base.astro';
+---
+
+<Base>
+  <section class="hero" style="background:var(--bg-hero);padding:80px 0 60px;border-bottom:1px solid var(--border-light)">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap">
+      <div style="flex:1;min-width:280px">
+        <div style="display:inline-block;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;background:rgba(255,255,255,0.15);color:var(--hero-text);margin-bottom:16px">✦ 香港老師專屬</div>
+        <h1 style="color:var(--hero-text);font-size:clamp(28px,4vw,40px);margin-bottom:16px">
+          AI 工具，<span style="color:var(--accent)">香港老師</span>用得著
+        </h1>
+        <p style="color:var(--hero-text-secondary);font-size:16px;line-height:1.7;margin-bottom:28px;max-width:520px">
+          十幾年 IT 科技統籌經驗，最直接嘅實戰分享。唔兜圈，淨係講你用得到嘅 AI 工具同教學點子。
+        </p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="/tools" class="btn btn-primary" style="background:var(--accent);color:var(--brown-900);font-weight:700">探索工具 →</a>
+          <a href="/ideas" class="btn btn-secondary">教學點子</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- Features -->
+    <section style="padding:60px 0">
+      <h2 class="section-title" style="font-size:24px;font-weight:700;margin-bottom:8px">📚 精選文章</h2>
+      <p class="section-subtitle" style="color:var(--text-secondary);font-size:14px;margin-bottom:36px">按學科分類，搵你需要嘅教學點子</p>
+
+      <div class="cat-tags">
+        <span class="cat-tag active">全部</span>
+        <span class="cat-tag">AI 工具</span>
+        <span class="cat-tag">教學點子</span>
+        <span class="cat-tag">政策解讀</span>
+        <span class="cat-tag">技術教學</span>
+      </div>
+
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-icon">🤖</div>
+          <div class="card-cat">AI 工具</div>
+          <h3>Gemini Gems 出題指引 — 免費慳時間</h3>
+          <p>3 分鐘設定一個 Gem，從此出卷只需輸入範圍，AI 自動生成選擇題、填充題。</p>
+          <div class="card-tags">
+            <span class="card-tag">中文</span>
+            <span class="card-tag">英文</span>
+            <span class="price-tag free">免費</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">📋</div>
+          <div class="card-cat">教學點子</div>
+          <h3>Google Classroom + AI：自動批改實戰</h3>
+          <p>用 AI Agent 幫你收功課、批改、發送回饋，一鍵完成重複性工作。</p>
+          <div class="card-tags">
+            <span class="card-tag">常識</span>
+            <span class="card-tag">科學</span>
+            <span class="price-tag tier">免費+付費</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">📊</div>
+          <div class="card-cat">政策解讀</div>
+          <h3>香港學校 AI 使用指引 2026 重點</h3>
+          <p>教育局最新 AI 政策解讀，學校點樣合規使用 AI 工具於教學場景。</p>
+          <div class="card-tags">
+            <span class="card-tag">政策</span>
+            <span class="card-tag">行政</span>
+            <span class="price-tag free">免費</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+      <h2>📬 每週 AI 教學貼士</h2>
+      <p>一週一次，唔 spam。香港老師專屬嘅 AI 工具推介同教學點子。</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="你的電郵地址" aria-label="Email">
+        <button type="submit">訂閱</button>
+      </div>
+    </section>
+  </div>
+</Base>

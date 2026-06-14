@@ -1,0 +1,24 @@
+{
+  "name": "ai-site",
+  "version": "1.0.0",
+  "description": "AI tools & ideas for Hong Kong educators.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://oauth2@github.com/jerometam/ai.in.education.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jerometam/ai.in.education/issues"
+  },
+  "homepage": "https://github.com/jerometam/ai.in.education#readme",
+  "dependencies": {
+    "@astrojs/cloudflare": "^13.7.0",
+    "astro": "^6.4.6"
+  }
+}

@@ -1,0 +1,33 @@
+---
+// src/pages/tools.astro — AI 工具列表
+import Base from '../layouts/Base.astro';
+---
+<Base title="AI 工具">
+  <div class="container" style="padding:60px 24px">
+    <h1 style="margin-bottom:8px">🤖 AI 工具</h1>
+    <p style="margin-bottom:40px">香港老師用得著嘅 AI 工具，全部標明收費模式。</p>
+    <div class="card-grid">
+      <article class="card">
+        <div class="card-icon">🤖</div>
+        <div class="card-cat">AI 工具</div>
+        <h3>Google Gemini Gems — 出題神器</h3>
+        <p>免費。設定出題 Gem，輸入範圍即出選擇題、填充題。</p>
+        <div class="card-tags"><span class="price-tag free">免費</span></div>
+      </article>
+      <article class="card">
+        <div class="card-icon">📝</div>
+        <div class="card-cat">AI 工具</div>
+        <h3>NotebookLM — 教學備課助手</h3>
+        <p>免費。匯入教材即生成摘要、筆記、簡報大綱。</p>
+        <div class="card-tags"><span class="price-tag free">免費</span></div>
+      </article>
+      <article class="card">
+        <div class="card-icon">🎨</div>
+        <div class="card-cat">AI 工具</div>
+        <h3>Canva — AI 簡報設計</h3>
+        <p>免費 tier 已夠用。AI 生成簡報、工作紙、海報。</p>
+        <div class="card-tags"><span class="price-tag tier">免費+付費</span></div>
+      </article>
+    </div>
+  </div>
+</Base>
