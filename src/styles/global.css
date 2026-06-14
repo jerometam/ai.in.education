@@ -283,29 +283,40 @@ nav a:hover, nav a.active { color: var(--primary); font-weight: 600; }
   border-top: 1px solid var(--border-light);
 }
 .card-tag {
-  font-size: 11px; color: var(--text-muted);
-  padding: 2px 8px; border-radius: 4px;
-  background: var(--tag-bg);
+  font-size: 11px; color: var(--brown-800);
+  padding: 3px 10px; border-radius: 4px;
+  background: var(--brown-100);
+  font-weight: 500;
+}
+[data-theme="dark"] .card-tag {
+  color: var(--brown-100);
+  background: var(--brown-700);
 }
 .price-tag {
   padding: 2px 8px; border-radius: 4px;
   font-size: 11px; font-weight: 600; margin-left: auto;
 }
-.price-tag.free { background: var(--primary-light); color: var(--green-700); }
+.price-tag.free { background: var(--primary-light); color: var(--green-800); }
+[data-theme="dark"] .price-tag.free { background: rgba(127,160,96,0.2); color: var(--green-300); }
 .price-tag.paid { background: var(--terracotta-100); color: var(--terracotta-500); }
-.price-tag.tier { background: var(--accent-light); color: var(--brown-700); }
+[data-theme="dark"] .price-tag.paid { background: rgba(198,97,61,0.2); color: var(--terracotta-400); }
+.price-tag.tier { background: var(--accent-light); color: var(--brown-800); }
+[data-theme="dark"] .price-tag.tier { background: rgba(232,199,123,0.15); color: var(--gold-400); }
 
 /* ===== Category Tags ===== */
 .cat-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
 .cat-tag {
   padding: 6px 16px; border-radius: 20px;
   font-size: 13px; font-weight: 500;
-  background: var(--tag-bg); color: var(--tag-text);
+  background: var(--brown-100); color: var(--brown-800);
   cursor: pointer; transition: all 0.2s;
   border: 1px solid transparent;
 }
+[data-theme="dark"] .cat-tag {
+  background: var(--brown-700); color: var(--brown-100);
+}
 .cat-tag:hover, .cat-tag.active {
-  background: var(--primary-light); color: var(--primary);
+  background: var(--primary); color: #fff;
   border-color: var(--primary);
 }
 

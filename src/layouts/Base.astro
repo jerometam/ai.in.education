@@ -111,8 +111,14 @@ import '../styles/global.css';
     const header = document.querySelector('header');
     
     menuToggle.addEventListener('click', function() {
-      header.classList.add('nav-open');
-      document.body.style.overflow = 'hidden';
+      if (header.classList.contains('nav-open')) {
+        // Clicking hamburger again closes the menu
+        header.classList.remove('nav-open');
+        document.body.style.overflow = '';
+      } else {
+        header.classList.add('nav-open');
+        document.body.style.overflow = 'hidden';
+      }
     });
     navClose.addEventListener('click', function() {
       header.classList.remove('nav-open');
