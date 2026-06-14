@@ -188,14 +188,15 @@ nav a:hover, nav a.active { color: var(--primary); font-weight: 600; }
 /* ===== Hamburger Menu Button ===== */
 .menu-toggle {
   display: none;
-  flex-direction: column; gap: 4px;
-  background: none; border: none;
-  cursor: pointer; padding: 6px;
+  flex-direction: column; gap: 5px;
+  background: var(--tag-bg); border: none;
+  cursor: pointer; padding: 8px 10px;
+  border-radius: 8px;
   z-index: 210;
 }
 .menu-toggle span {
   display: block;
-  width: 22px; height: 2px;
+  width: 20px; height: 2.5px;
   background: var(--text);
   border-radius: 2px;
   transition: all 0.2s;
